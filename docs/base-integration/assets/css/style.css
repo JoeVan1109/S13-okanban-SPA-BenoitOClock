@@ -1,0 +1,15 @@
+.card-color {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+}
+
+.modal .box {
+  padding: 3rem 2rem;
+}
+
+.tag {
+  color: #fff !important;
+}

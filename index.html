@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="theme-light">
+
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Title -->
+  <title>oKanban</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg width='24px' height='24px' stroke-width='1.5' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' color='%23000000'%3E%3Cpath d='M3 3.6V20.4C3 20.7314 3.26863 21 3.6 21H20.4C20.7314 21 21 20.7314 21 20.4V3.6C21 3.26863 20.7314 3 20.4 3H3.6C3.26863 3 3 3.26863 3 3.6Z' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M6 6L6 16' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M10 6V9' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M14 6V13' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3Cpath d='M18 6V11' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/svg%3E">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- Custom JS -->
+  <script defer src="./assets/js/index.js" type="module"></script>
+</head>
+
+<body>
+  <div class="container is-fluid">
+    <header class="columns is-vcentered my-1 is-mobile">
+      <div class="column">
+        <h1 class="title is-3">oKanban</h1>
+      </div>
+      <div class="column is-narrow">
+        <button class="button is-primary is-medium is-responsive" id="add-list-btn">
+          <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+          </span>
+          <span>Ajouter une liste</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="lists-container" class="columns is-multiline">
+      <section class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-third-desktop is-one-half-tablet">
+        <div class="message is-info">
+          <div class="message-header">
+            <div class="list-name is-flex-grow-1" slot="list-title">Titre de la liste</div>
+            <span class="modify-list-btn icon is-clickable" aria-role="button" aria-label="éditer la liste">
+              <i class="fas fa-pencil-alt"></i>
+            </span>
+            <span class="delete-list-btn icon is-clickable" aria-role="button" aria-label="supprimer la liste">
+              <i class="fas fa-trash-alt"></i>
+            </span>
+            <span class="add-card-btn icon is-clickable" aria-role="button" aria-label="ajouter une carte à la liste">
+              <i class="fas fa-plus"></i>
+            </span>
+          </div>
+          <div class="message-body">
+            <article class="card is-clipped">
+              <div class="card-color"></div>
+              <div class="card-header">
+                <div class="card-header-title is-clipped">
+                  <p slot="card-title">Titre de la carte</p>
+                </div>
+                <div class="card-header-icon has-text-grey-light">
+                  <span class="modify-card-btn icon is-clickable" aria-role="button" aria-label="Éditer la carte">
+                    <i class="fas fa-pencil-alt"></i>
+                  </span>
+                  <span class="delete-card-btn icon is-clickable" aria-role="button" aria-label="Supprimer la carte">
+                    <i class="fas fa-trash-alt"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="card-content" slot="card-content">Contenu de la carte</div>
+              <div class="card-footer">
+                <div class="card-footer-item tags are-small is-justify-content-end" slot="card-tags">
+                  <span class="add-tag-btn tag has-background-primary is-clickable" aria-role="button"
+                    aria-label="modifier les tag">
+                    <span class="icon has-text-white">
+                      <i class="fas fa-pencil-alt"></i>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+            <article class="card is-clipped">
+              <div class="card-color"></div>
+              <div class="card-header">
+                <div class="card-header-title is-clipped">
+                  <p slot="card-title">Titre de la carte</p>
+                </div>
+                <div class="card-header-icon has-text-grey-light">
+                  <span class="modify-card-btn icon is-clickable" aria-role="button" aria-label="Éditer la carte">
+                    <i class="fas fa-pencil-alt"></i>
+                  </span>
+                  <span class="delete-card-btn icon is-clickable" aria-role="button" aria-label="Supprimer la carte">
+                    <i class="fas fa-trash-alt"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="card-content" slot="card-content">Contenu de la carte</div>
+              <div class="card-footer">
+                <div class="card-footer-item tags are-small is-justify-content-end" slot="card-tags">
+                  <span class="add-tag-btn tag has-background-primary is-clickable" aria-role="button"
+                    aria-label="modifier les tag">
+                    <span class="icon has-text-white">
+                      <i class="fas fa-pencil-alt"></i>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-third-desktop is-one-half-tablet">
+        <div class="message is-info">
+          <div class="message-header">
+            <div class="list-name is-flex-grow-1" slot="list-title">Titre de la liste</div>
+            <span class="modify-list-btn icon is-clickable" aria-role="button" aria-label="éditer la liste">
+              <i class="fas fa-pencil-alt"></i>
+            </span>
+            <span class="delete-list-btn icon is-clickable" aria-role="button" aria-label="supprimer la liste">
+              <i class="fas fa-trash-alt"></i>
+            </span>
+            <span class="add-card-btn icon is-clickable" aria-role="button" aria-label="ajouter une carte à la liste">
+              <i class="fas fa-plus"></i>
+            </span>
+          </div>
+          <div class="message-body">
+            <article class="card is-clipped">
+              <div class="card-color"></div>
+              <div class="card-header">
+                <div class="card-header-title is-clipped">
+                  <p slot="card-title">Titre de la carte</p>
+                </div>
+                <div class="card-header-icon has-text-grey-light">
+                  <span class="modify-card-btn icon is-clickable" aria-role="button" aria-label="Éditer la carte">
+                    <i class="fas fa-pencil-alt"></i>
+                  </span>
+                  <span class="delete-card-btn icon is-clickable" aria-role="button" aria-label="Supprimer la carte">
+                    <i class="fas fa-trash-alt"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="card-content" slot="card-content">Contenu de la carte</div>
+              <div class="card-footer">
+                <div class="card-footer-item tags are-small is-justify-content-end" slot="card-tags">
+                  <span class="add-tag-btn tag has-background-primary is-clickable" aria-role="button"
+                    aria-label="modifier les tag">
+                    <span class="icon has-text-white">
+                      <i class="fas fa-pencil-alt"></i>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+            <article class="card is-clipped">
+              <div class="card-color"></div>
+              <div class="card-header">
+                <div class="card-header-title is-clipped">
+                  <p slot="card-title">Titre de la carte</p>
+                </div>
+                <div class="card-header-icon has-text-grey-light">
+                  <span class="modify-card-btn icon is-clickable" aria-role="button" aria-label="Éditer la carte">
+                    <i class="fas fa-pencil-alt"></i>
+                  </span>
+                  <span class="delete-card-btn icon is-clickable" aria-role="button" aria-label="Supprimer la carte">
+                    <i class="fas fa-trash-alt"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="card-content" slot="card-content">Contenu de la carte</div>
+              <div class="card-footer">
+                <div class="card-footer-item tags are-small is-justify-content-end" slot="card-tags">
+                  <span class="add-tag-btn tag has-background-primary is-clickable" aria-role="button"
+                    aria-label="modifier les tag">
+                    <span class="icon has-text-white">
+                      <i class="fas fa-pencil-alt"></i>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Add a list modal -->
+  <!-- (add the 'is-active' class to see it : https://bulma.io/documentation/components/modal/#javascript-implementation-example) -->
+  <div class="modal" id="add-list-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <form>
+        <div class="modal-card-head">
+          <p class="modal-card-title">Ajouter une liste</p>
+          <button class="delete close" type="button" aria-label="close"></button>
+        </div>
+
+        <div class="modal-card-body">
+          <label for="add-list-title" class="label">Titre</label>
+          <input id="add-list-title" class="input" type="text" name="title" placeholder="Titre de la liste">
+        </div>
+
+        <div class="modal-card-foot">
+          <button class="button is-success">Ajouter</button>
+          <button class="button close" type="button">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+<!-- Template pour une liste -->
+<template id="list-template">
+  <section class="column is-one-fifth-fullhd is-one-quarter-widescreen is-one-third-desktop is-one-half-tablet">
+    <div class="message is-info">
+      <div class="message-header">
+        <div class="list-name is-flex-grow-1" slot="list-title"></div>
+        <span class="modify-list-btn icon is-clickable" aria-role="button" aria-label="éditer la liste">
+          <i class="fas fa-pencil-alt"></i>
+        </span>
+        <span class="delete-list-btn icon is-clickable" aria-role="button" aria-label="supprimer la liste">
+          <i class="fas fa-trash-alt"></i>
+        </span>
+        <span class="add-card-btn icon is-clickable" aria-role="button" aria-label="ajouter une carte à la liste">
+          <i class="fas fa-plus"></i>
+        </span>
+      </div>
+      <div class="message-body">
+        <!-- Cards go here -->
+      </div>
+    </div>
+  </section>
+</template>
+
+<!-- Template pour une carte -->
+<template id="card-template">
+  <article class="card is-clipped">
+    <div class="card-color"></div>
+    <div class="card-header">
+      <div class="card-header-title is-clipped">
+        <p slot="card-title"></p>
+      </div>
+      <div class="card-header-icon has-text-grey-light">
+        <span class="modify-card-btn icon is-clickable" aria-role="button" aria-label="Éditer la carte">
+          <i class="fas fa-pencil-alt"></i>
+        </span>
+        <span class="delete-card-btn icon is-clickable" aria-role="button" aria-label="Supprimer la carte">
+          <i class="fas fa-trash-alt"></i>
+        </span>
+      </div>
+    </div>
+    <div class="card-content" slot="card-content"></div>
+    <div class="card-footer">
+      <div class="card-footer-item tags are-small is-justify-content-end" slot="card-tags">
+        <span class="add-tag-btn tag has-background-primary is-clickable" aria-role="button"
+          aria-label="modifier les tag">
+          <span class="icon has-text-white">
+            <i class="fas fa-pencil-alt"></i>
+          </span>
+        </span>
+      </div>
+    </div>
+  </article>
+</template>
+
+</html>
